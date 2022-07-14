@@ -1,0 +1,23 @@
+/score/create/boxMesh boxMesh
+#
+/score/mesh/boxSize 10.5 10.5 0.25 cm
+/score/mesh/translate/xyz 0. 0. 110.1561 cm
+/score/mesh/nBin 201 201 1
+#
+/score/quantity/energyDeposit eDep
+#
+/score/close
+
+/score/list
+/run/printProgress 1
+
+# Physics
+#
+/Physics/setGCut 0.01 mm
+/Physics/setECut 0.01 mm
+/Physics/setPCut 0.01 mm
+/Parameters/Nsplit 80
+
+/run/beamOn 10000000
+
+/score/dumpQuantityToFile boxMesh eDep EnergyDeposition.txt
