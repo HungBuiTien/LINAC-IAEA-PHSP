@@ -41,10 +41,15 @@ PhysicsListMessenger::PhysicsListMessenger(PhysicsList* pPhys)
   Bremspe_NsplitCmd->SetGuidance("Splitting factor");
   Bremspe_NsplitCmd->SetParameterName("Bremspe_Nsplit",false);
   Bremspe_NsplitCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
+	//Bremspe_NsplitCmd->SetDefaultUnit("");
+	//Bremspe_NsplitCmd->SetDefaultValue(80);
+
   Bremspe_EnabledCmd = new G4UIcmdWithABool("/Physics/Bremspe_Enabled",this);  
   Bremspe_EnabledCmd->SetGuidance("enable or disable Bremspe technique");
   Bremspe_EnabledCmd->SetParameterName("Bremspe_Enabled",false);
   Bremspe_EnabledCmd->AvailableForStates(G4State_PreInit,G4State_Idle); 
+  //Bremspe_EnabledCmd->SetDefaultUnit("");
+	//Bremspe_EnabledCmd->SetDefaultValue(true);
 }
 /*#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=*/
 PhysicsListMessenger::~PhysicsListMessenger()

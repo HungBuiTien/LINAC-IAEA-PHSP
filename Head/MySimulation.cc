@@ -9,6 +9,7 @@
 #include <iostream>
 
 #include "G4RunManagerFactory.hh"
+#include "G4RunManager.hh"
 
 #include "G4Types.hh"
 #include "Randomize.hh"
@@ -31,9 +32,10 @@ int main(int argc, char** argv)
 	G4Random::setTheEngine(new CLHEP::RanecuEngine);
 	
 	// Construct the default run manager
-	auto* runManager = G4RunManagerFactory::CreateRunManager();
-	G4int nThreads = 4;
-	runManager->SetNumberOfThreads(nThreads);
+	//auto* runManager = G4RunManagerFactory::CreateRunManager();
+	//G4int nThreads = 4;
+	//runManager->SetNumberOfThreads(nThreads);
+	G4RunManager* runManager = new G4RunManager;
 
 	// Detect interactive mode (if no macro provided) and define UI session
     //
@@ -48,7 +50,7 @@ int main(int argc, char** argv)
 
 	// Initialize G4 kernel
 	//
-	//runManager->Initialize();
+	runManager->Initialize();
 
 	// Process macro or start UI session
 	//

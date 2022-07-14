@@ -22,50 +22,56 @@
 // * use  in  resulting  scientific  publications,  and indicate your *
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
-//
 
-/*#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
-  AUTHOR: Dr. Jaafar EL Bakkali, Assistant Professor of Nuclear Physics, Rabat, Morocco.
-  e-mail: bahmedj@gmail.com
-
-  For documentation
-  see http://G4Linac_MT.github.com
- 
-  10/08/2017: public version 1.0
- 
-#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#*/
-
-#include "ActionInitialization.hh"
-#include "PrimaryGeneratorAction.hh"
-#include "RunAction.hh"
+/*this code is writed by Jaafar EL bakkali
+contact at e-mail : bahmedj@gmail.com
+*/
+#include "G4ios.hh"
+#include <stdio.h>
 #include "EventAction.hh"
+#include "globals.hh"
+#include "G4Event.hh"
+#include "G4EventManager.hh"
+#include "G4TrajectoryContainer.hh"
+#include "G4Trajectory.hh"
+#include "G4VVisManager.hh"
+#include "G4RunManager.hh"
+#include "G4IAEAphspWriter.hh"
 #include "SteppingAction.hh"
-/*#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#*/
+#include "G4RunManager.hh"
+#include "Randomize.hh"
+EventAction::EventAction()
 
-ActionInitialization::ActionInitialization()
- : G4VUserActionInitialization()
-{}
-
-/*#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#*/
-
-ActionInitialization::~ActionInitialization()
-{}
-
-/*#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#*/
-
-void ActionInitialization::BuildForMaster() const
 {
-  SetUserAction(new RunAction);
+
+}
+ 
+EventAction::~EventAction()
+{}
+
+ 
+void EventAction::BeginOfEventAction(const G4Event* aEvent)
+{
+
+
+G4IAEAphspWriter* IAEAWriter = G4IAEAphspWriter::GetInstance();
+IAEAWriter->BeginOfEventAction(aEvent);
+
+   
+
+
 }
 
-/*#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#*/
-
-void ActionInitialization::Build() const
+ 
+void EventAction::EndOfEventAction(const G4Event* )
 {
-  SetUserAction(new PrimaryGeneratorAction);
-  SetUserAction(new RunAction);
-  SetUserAction(new EventAction);
-  SetUserAction(new SteppingAction);
+static int n=1;
+G4IAEAphspWriter* IAEAWriter = G4IAEAphspWriter::GetInstance();
+G4RunManager* runManager = G4RunManager::GetRunManager();
+    const G4Event * event = runManager->GetCurrentEvent();
+    G4int event_id= event->GetEventID();
 
-}  
-/*#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#*/
+if ( event_id==60000*n){IAEAWriter->UpdateHeaders();n++;};
+}
+
+

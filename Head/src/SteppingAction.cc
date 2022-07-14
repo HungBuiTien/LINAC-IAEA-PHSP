@@ -22,50 +22,43 @@
 // * use  in  resulting  scientific  publications,  and indicate your *
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
-//
 
-/*#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
-  AUTHOR: Dr. Jaafar EL Bakkali, Assistant Professor of Nuclear Physics, Rabat, Morocco.
-  e-mail: bahmedj@gmail.com
-
-  For documentation
-  see http://G4Linac_MT.github.com
- 
-  10/08/2017: public version 1.0
- 
-#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#*/
-
-#include "ActionInitialization.hh"
-#include "PrimaryGeneratorAction.hh"
-#include "RunAction.hh"
-#include "EventAction.hh"
+/*this code is writed by Jaafar EL bakkali
+contact at e-mail : bahmedj@gmail.com
+*/
+#include "G4ios.hh"
+#include <stdio.h>
+#include "G4SteppingManager.hh"
+#include "G4TrackVector.hh"
 #include "SteppingAction.hh"
-/*#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#*/
+#include "G4ios.hh"
+#include "G4SteppingManager.hh"
+#include "G4Track.hh"
+#include "G4Step.hh"
+#include "G4StepPoint.hh"
+#include "G4TrackStatus.hh"
+#include "G4ParticleDefinition.hh"
+#include "G4ParticleTypes.hh"
+#include "G4VProcess.hh"
+#include "G4TrackingManager.hh"
+#include "G4IAEAphspWriter.hh"
+#include "G4Event.hh"
+#include "EventAction.hh"
 
-ActionInitialization::ActionInitialization()
- : G4VUserActionInitialization()
-{}
-
-/*#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#*/
-
-ActionInitialization::~ActionInitialization()
-{}
-
-/*#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#*/
-
-void ActionInitialization::BuildForMaster() const
+SteppingAction::SteppingAction()
 {
-  SetUserAction(new RunAction);
+
 }
 
-/*#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#*/
-
-void ActionInitialization::Build() const
+SteppingAction::~SteppingAction()
 {
-  SetUserAction(new PrimaryGeneratorAction);
-  SetUserAction(new RunAction);
-  SetUserAction(new EventAction);
-  SetUserAction(new SteppingAction);
+}
 
-}  
-/*#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#*/
+void SteppingAction::UserSteppingAction(const G4Step* aStep)
+{ 
+ G4IAEAphspWriter::GetInstance()->UserSteppingAction(aStep);
+
+
+
+}//end of UserSteppingAction
+
