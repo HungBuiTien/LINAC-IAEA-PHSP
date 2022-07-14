@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\Head\bld\CMakeFiles\43dd9cf522c94b9f991f65b58f93d117\CBCT.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\Head\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\Head\bld\CMakeFiles\CBCT" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{9DB58585-2B77-36D1-87CA-F62952E8731B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
