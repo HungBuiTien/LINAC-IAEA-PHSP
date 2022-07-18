@@ -1,2 +1,12 @@
-/gun/momentumAmp 0.5 GeV
-/run/beamOn 100
+/score/create/boxMesh Tumor
+/score/mesh/boxSize 10.05 10.05 0.25 cm
+/score/mesh/translate/xyz 0 0 110.1561 cm
+/score/mesh/nBin 201 201 1
+/score/quantity/energyDeposit eDep
+/score/close
+/score/list
+
+/run/printProgress 1
+/run/BeamOn 30000000
+
+/score/dumpQuantityToFile Tumor eDep eDep_xy.out

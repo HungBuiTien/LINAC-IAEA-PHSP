@@ -26,7 +26,7 @@ G4VPhysicalVolume *MyDetectorConstruction :: Construct()
 	// *****************************************************************************
 
 	// World volume
-	G4Box* solidWorld = new G4Box("solidWorld", 100 * cm, 100 * cm, 100 * cm);
+	G4Box* solidWorld = new G4Box("solidWorld", 50 * cm, 50 * cm, 150 * cm);
 	logicWorld = new G4LogicalVolume(solidWorld, Air, "logicWorld");
 	G4VPhysicalVolume *physWorld = new G4PVPlacement(0,
 										G4ThreeVector(0., 0., 0.), 
@@ -53,7 +53,8 @@ G4VPhysicalVolume *MyDetectorConstruction :: Construct()
 	Phantom_log = new G4LogicalVolume(Phantom, Water, "Phantom_log", 0,0,0);
 	G4double PhantomPos_x = 0.0*m;
 	G4double PhantomPos_y = 0.0*m;
-	G4double PhantomPos_z = 115.*cm;
+	G4double PhantomPos_z = 115.1561*cm;
+	//G4double PhantomPos_z = 115*cm;
 	Phantom_phys = new G4PVPlacement(0,
 				G4ThreeVector(PhantomPos_x,PhantomPos_y,PhantomPos_z),
 				"Phantom_phys",Phantom_log,physWorld,false,0);		
