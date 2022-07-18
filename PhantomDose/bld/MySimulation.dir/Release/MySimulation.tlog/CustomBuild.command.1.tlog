@@ -1,0 +1,10 @@
+^D:\GITHUB\TRUEBEAMSTX-EBT3-2SEG-GEANT4\PHANTOMDOSE\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Github/TrueBeamSTX-EBT3-2Seg-Geant4/PhantomDose -BD:/Github/TrueBeamSTX-EBT3-2Seg-Geant4/PhantomDose/bld --check-stamp-file D:/Github/TrueBeamSTX-EBT3-2Seg-Geant4/PhantomDose/bld/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

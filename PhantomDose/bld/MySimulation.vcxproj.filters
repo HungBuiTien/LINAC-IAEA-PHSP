@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\MySimulation.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\src\G4IAEAphspReader.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\src\G4IAEAphspReaderMessenger.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\src\MyActionInitialization.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\src\MyDetectorConstruction.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\src\MyPhysicsList.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\src\MyPrimaryGenerator.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\src\iaea_header.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\src\iaea_phsp.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\src\iaea_record.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\src\utilities.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\include\G4IAEAphspReader.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\include\G4IAEAphspReaderMessenger.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\include\MyActionInitialization.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\include\MyDetectorConstruction.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\include\MyPhysicsList.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\include\MyPrimaryGenerator.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Github\TrueBeamSTX-EBT3-2Seg-Geant4\PhantomDose\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{2CCD53A5-540E-3F6E-A228-889CDB705470}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{AA1DC556-A5E2-3FA4-8C64-AB846E5F9FB4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

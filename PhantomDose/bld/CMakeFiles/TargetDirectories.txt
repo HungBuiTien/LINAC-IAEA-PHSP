@@ -1,0 +1,4 @@
+D:/Github/TrueBeamSTX-EBT3-2Seg-Geant4/PhantomDose/bld/CMakeFiles/MySimulation.dir
+D:/Github/TrueBeamSTX-EBT3-2Seg-Geant4/PhantomDose/bld/CMakeFiles/CBCT.dir
+D:/Github/TrueBeamSTX-EBT3-2Seg-Geant4/PhantomDose/bld/CMakeFiles/ALL_BUILD.dir
+D:/Github/TrueBeamSTX-EBT3-2Seg-Geant4/PhantomDose/bld/CMakeFiles/ZERO_CHECK.dir
